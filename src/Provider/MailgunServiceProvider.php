@@ -22,7 +22,7 @@ use Mailgun\Mailgun;
  * Class RoutingServiceProvider
  * @package AchrafSoltani\Provider
  */
-class MailgunServiceProvider extends ServiceProviderInterface
+class MailgunServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
