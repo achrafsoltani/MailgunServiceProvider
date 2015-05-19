@@ -1,0 +1,23 @@
+{
+    "name": "achrafsoltani/mailgunserviceprovider",
+    "description": "Mailgun Service Provider for Silex",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.0",
+        "mailgun/mailgun-php": "dev-master",
+        "silex/silex": "^2.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Achraf Soltani",
+            "email": "achraf.soltani@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "AchrafSoltani\\": "src/"
+        }
+    }
+}
