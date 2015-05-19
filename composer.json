@@ -15,7 +15,6 @@
             "email": "achraf.soltani@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "AchrafSoltani\\": "src/"
