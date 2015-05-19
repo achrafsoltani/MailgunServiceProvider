@@ -28,7 +28,7 @@ class MailgunServiceProvider implements ServiceProviderInterface
     {
         $app['mailgun.send'] = $app->protect(function ($message) use ($app) {
             $client = new Mailgun($app['mailgun.api_key']);
-            $result = $mgClient->sendMessage($app['mailgun.domain'], $message);
+            $result = $client->sendMessage($app['mailgun.domain'], $message);
             return $result;
         });
     }
