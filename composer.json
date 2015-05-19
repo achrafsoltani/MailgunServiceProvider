@@ -5,7 +5,7 @@
     "version": "v1.0.0",
     "require": {
         "php": ">=5.3.0",
-        "mailgun/mailgun-php": "dev-master",
+        "mailgun/mailgun-php": "@dev",
         "silex/silex": "^1.2"
     },
     "license": "MIT",
