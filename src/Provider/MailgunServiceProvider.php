@@ -3,7 +3,7 @@
 /**
  * MailgunServiceProvider
  *
- * A Simple wrapper for the mailgun API for teh Silex Framework
+ * A Simple wrapper for the mailgun API for the Silex Framework
  *
  * @package		MailgunServiceProvider
  * @author		Achraf Soltani <achraf.soltani@gmail.com>
