@@ -1,6 +1,9 @@
 # MailgunServiceProvider
 
 A Simple wrapper for the mailgun API for the Silex Framework.
+[![Latest Stable Version](https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/v/stable)](https://packagist.org/packages/achrafsoltani/mailgunserviceprovider)
+[![Total Downloads](https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/downloads)](https://packagist.org/packages/achrafsoltani/mailgunserviceprovider)
+[![License](https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/license)](https://packagist.org/packages/achrafsoltani/mailgunserviceprovider)
 
 Features
 --------
