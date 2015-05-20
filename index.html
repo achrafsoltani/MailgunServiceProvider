@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mailgunserviceprovider by AchrafSoltani</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mailgunserviceprovider</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/AchrafSoltani/MailgunServiceProvider">View the Project on GitHub <small>AchrafSoltani/MailgunServiceProvider</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/AchrafSoltani/MailgunServiceProvider/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/AchrafSoltani/MailgunServiceProvider/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/AchrafSoltani/MailgunServiceProvider">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="mailgunserviceprovider" class="anchor" href="#mailgunserviceprovider" aria-hidden="true"><span class="octicon octicon-link"></span></a>MailgunServiceProvider</h1>
+
+<p>A Simple wrapper for the mailgun API for the Silex Framework.
+<a href="https://packagist.org/packages/achrafsoltani/mailgunserviceprovider"><img src="https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/v/stable" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/achrafsoltani/mailgunserviceprovider"><img src="https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/downloads" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/achrafsoltani/mailgunserviceprovider"><img src="https://poser.pugx.org/achrafsoltani/mailgunserviceprovider/license" alt="License"></a></p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Easy setup.</li>
+<li>All the Mailgun API features.</li>
+</ul>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>PHP 5.3+</li>
+<li>mailgun-php</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-sh"><pre>$ composer require achrafsoltani/mailgunserviceprovider</pre></div>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">require_once</span> <span class="pl-c1">__DIR__</span><span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Silex\Application</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">AchrafSoltani\Provider\MailgunServiceProvider</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Application</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>register(<span class="pl-k">new</span> <span class="pl-c1">MailgunServiceProvider</span>(), <span class="pl-c1">array</span>(</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>mailgun.api_key<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>key-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>mailgun.domain<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>domain.tld<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">));</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Usage</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ul>
+<li>Example 1 : Sending an email</li>
+</ul>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$message</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>from<span class="pl-pds">'</span></span>    <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Excited User &lt;name@domain.tld&gt;<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>to<span class="pl-pds">'</span></span>      <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Baz &lt;foo.bar@example.com&gt;<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>subject<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Greetings!<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>text<span class="pl-pds">'</span></span>    <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Testing some Mailgun awesomness!<span class="pl-pds">'</span></span>    </span>
+<span class="pl-s1">);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">//$app['mailgun']-&gt;sendMessage($message);</span></span></pre></div>
+
+<ul>
+<li>Example 2 : Creating a mailing list through the API</li>
+</ul>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$app</span>[<span class="pl-s"><span class="pl-pds">'</span>mailgun<span class="pl-pds">'</span></span>]<span class="pl-k">-&gt;</span>post(<span class="pl-s"><span class="pl-pds">"</span>lists<span class="pl-pds">"</span></span>, <span class="pl-c1">array</span>(</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>address<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>LIST@domain.tld<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>description<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Mailgun Dev List<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">));</span></pre></div>
+
+<h2>
+<a id="full-api-documentation" class="anchor" href="#full-api-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Full API documentation</h2>
+
+<p>Check how to use the full API capabilities at <a href="https://documentation.mailgun.com/user_manual.html">https://documentation.mailgun.com/user_manual.html</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/AchrafSoltani">AchrafSoltani</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
