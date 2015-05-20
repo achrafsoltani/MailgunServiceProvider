@@ -19,7 +19,7 @@ use Silex\ServiceProviderInterface;
 use AchrafSoltani\Mailgun\Client;
 
 /**
- * Class RoutingServiceProvider
+ * Class MailgunServiceProvider
  * @package AchrafSoltani\Provider
  */
 class MailgunServiceProvider implements ServiceProviderInterface
