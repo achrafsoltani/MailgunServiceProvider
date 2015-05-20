@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "14a703919ff0f7d5bbce048783de67d2",
+    "hash": "1d77dd30afcd193d55e9b5f221b692a9",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -167,7 +167,7 @@
         },
         {
             "name": "mailgun/mailgun-php",
-            "version": "dev-master",
+            "version": "v1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mailgun/mailgun-php.git",
@@ -741,9 +741,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mailgun/mailgun-php": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

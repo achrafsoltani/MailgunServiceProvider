@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": ">=5.3.0",
-        "mailgun/mailgun-php": "@dev",
+        "mailgun/mailgun-php": "*",
         "silex/silex": "^1.2"
     },
     "license": "MIT",
