@@ -2,3 +2,4 @@
 /vendor/
 php.ini
 .git/
+index.php
