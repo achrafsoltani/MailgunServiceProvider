@@ -1,30 +1,64 @@
+# MailgunServiceProvider
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+A Simple wrapper for the mailgun API for the Silex Framework.
 
+Features
+--------
+* Easy setup.
+* All the Mailgun API features.
 
-Hi there! Welcome to Cloud9 IDE!
+Requirements
+------------
+ * PHP 5.3+
+ * mailgun-php
+  
+Installation
+------------ 
+```sh
+$ composer require achrafsoltani/mailgunserviceprovider
+```
+Setup
+------------
+``` {.php}
+require_once __DIR__.'/vendor/autoload.php';
 
-To get you started, we have created a small hello world application.
+use Silex\Application;
+use AchrafSoltani\Provider\MailgunServiceProvider;
 
-1) Open the hello-world.php file
+$app = new Application();
 
-2) Follow the run instructions in the file's comments
+$app->register(new MailgunServiceProvider(), array(
+    'mailgun.api_key' => 'key-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'mailgun.domain' => 'domain.tld',
+));
 
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
+// Usage
 
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
+$app->run();
+```
+Usage
+------------
+* Example 1 : Sending an email
 
-Happy coding!
-The Cloud9 IDE team
+``` {.php}
+$message = array(
+    'from'    => 'Excited User <name@domain.tld>',
+    'to'      => 'Baz <foo.bar@example.com>',
+    'subject' => 'Greetings!',
+    'text'    => 'Testing some Mailgun awesomness!'    
+);
 
+//$app['mailgun']->sendMessage($message);
+```
 
-## Support & Documentation
+* Example 2 : Creating a mailing list through the API
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+``` {.php}
+$app['mailgun']->post("lists", array(
+    'address'     => 'LIST@domain.tld',
+    'description' => 'Mailgun Dev List'
+));
+```
+Full API documentation
+------------
+Check how to use the full API capabilities at https://documentation.mailgun.com/user_manual.html
