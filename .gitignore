@@ -4,3 +4,4 @@
 php.ini
 index.php
 .idea/
+composer.lock
