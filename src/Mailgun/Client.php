@@ -34,7 +34,7 @@
      */
      public function sendMessage($postData, $postFiles = array())
      {
-         return parent::sendMessage($this->workingDomain, $postData, $postFiles = array());
+         return parent::sendMessage($this->workingDomain, $postData, $postFiles);
      }
          
  }
