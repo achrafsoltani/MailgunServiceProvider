@@ -17,7 +17,7 @@
  
  class Client extends Mailgun
  {
-     private $workingDomain;
+     protected $workingDomain;
      
      public function setWorkingDomain($workingDomain)
      {
